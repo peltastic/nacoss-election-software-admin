@@ -1,10 +1,11 @@
 // "use client"
-import React from "react";
+import React, { useEffect } from "react";
 import VoteImg from "/public/assets/vote-img.jpg";
 import Image from "next/image";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import Sidebar from "./Sidebar";
 import DashboardLayout from "./DashboardLayout";
+import { useLazyGetTopCardsQuery } from "@/lib/features/overview";
 // import { DonutChart } from "@mantine/charts";
 // import { DonutChart } from '@mantine/charts';
 
@@ -33,6 +34,10 @@ const contestants: {
 ];
 
 const Dashboard = (props: Props) => {
+  const [getTopCards, {}] = useLazyGetTopCardsQuery();
+  useEffect(() => {
+    getTopCards();
+  }, []);
   return (
     <DashboardLayout>
       <div className="w-[40%]">

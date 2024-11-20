@@ -1,5 +1,6 @@
 "use client"
 import Dashboard from '@/components/Dashboard'
+import { useProtectRoute } from '@/hooks/useProtectRoute'
 import React from 'react'
 
 type Props = {}

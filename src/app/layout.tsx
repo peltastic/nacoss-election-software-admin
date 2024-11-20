@@ -3,6 +3,8 @@ import "./globals.css";
 import '@mantine/core/styles.css';
 import "@mantine/charts/styles.css";
 import Providers from "@/components/Providers";
+import '@mantine/notifications/styles.css';
+
 
 export const metadata: Metadata = {
   // title: "Create Next App",

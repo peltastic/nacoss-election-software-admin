@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 8000",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -12,12 +12,17 @@
     "@mantine/charts": "^7.13.1",
     "@mantine/core": "^7.12.2",
     "@mantine/hooks": "^7.12.2",
+    "@mantine/notifications": "^7.14.1",
+    "@reduxjs/toolkit": "^2.3.0",
     "formik": "^2.4.6",
     "next": "14.2.13",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.3.0",
-    "recharts": "2"
+    "react-redux": "^9.1.2",
+    "recharts": "2",
+    "redux-persist": "^6.0.0",
+    "universal-cookie": "^7.2.2"
   },
   "devDependencies": {
     "@types/node": "^20",
