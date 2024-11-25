@@ -21,6 +21,15 @@ export interface IGetSingleCandidateResponse {
   id: string;
 }
 
+export interface IGetCandidateStatsResponse {
+  candidate_id: string;
+  firstname: string;
+  lastname: string;
+  middlename: string;
+  voters_path: string | null;
+  total_votes: string;
+}
+
 export const candidateApi = createApi({
   reducerPath: "candidateApi",
   baseQuery: baseQueryWithAuth,
@@ -28,6 +37,7 @@ export const candidateApi = createApi({
     getAllCandidates: build.query<IGetAllCandidatesResponse, void>({
       query: () => "/web/candidates",
     }),
+
     getSingleCandidate: build.query<
       {
         status: boolean;
@@ -38,6 +48,18 @@ export const candidateApi = createApi({
     >({
       query: (id) => `/web/candidates/${id}`,
     }),
+
+    getCandidateStats: build.query<
+      {
+        status: boolean;
+        message: string;
+        payload: IGetCandidateStatsResponse[];
+      },
+      string
+    >({
+      query: (id) => `/web/dashboard_candidate_stats?office=${id}`,
+    }),
+
     uploadCandidate: build.mutation<
       {
         status: boolean;
@@ -63,6 +85,7 @@ export const candidateApi = createApi({
         };
       },
     }),
+
     updateCandidate: build.mutation<
       {
         status: boolean;
@@ -97,4 +120,5 @@ export const {
   useUploadCandidateMutation,
   useUpdateCandidateMutation,
   useLazyGetSingleCandidateQuery,
+  useLazyGetCandidateStatsQuery,
 } = candidateApi;
