@@ -1,13 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
-import Sidebar from "./Sidebar";
 import DashboardLayout from "./DashboardLayout";
 import { useLazyGetTopStatsQuery } from "@/lib/features/overview";
 import { DonutChart } from "@mantine/charts";
-import { useLazyGetCandidateStatsQuery } from "@/lib/features/candidate";
-import Spinner from "./Spinner";
 import Votes from "./Votes";
 
 type Props = {};
@@ -106,8 +101,6 @@ const Dashboard = (props: Props) => {
                   size={80}
                   thickness={15}
                   strokeColor="#22222266"
-                  color="red"
-                  labelColor="#00ffc89f"
                 />
                 <p className="">Active voters</p>
               </div>
